@@ -1,10 +1,14 @@
 import { useRef, type ChangeEvent, type KeyboardEvent } from 'react'
+import type { Sender } from '../types/message'
+import SenderToggle from './SenderToggle'
 
 type Props = {
+  sender: Sender
+  onToggle: () => void
   onSend: (text: string) => void
 }
 
-function ChatInput({ onSend }: Props) {
+function ChatInput({ sender, onToggle, onSend }: Props) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   function adjustHeight() {
@@ -35,8 +39,11 @@ function ChatInput({ onSend }: Props) {
     el.style.height = 'auto'
   }
 
+  const isRobot = sender === 'robot'
+
   return (
-    <div className="bg-white rounded-lg shadow-sm p-3 flex items-end gap-2">
+    <div className={`bg-white rounded-lg shadow-sm p-3 flex items-end gap-2 border-2 transition-colors ${isRobot ? 'border-purple-500' : 'border-transparent'}`}>
+      <SenderToggle sender={sender} onToggle={onToggle} />
       <textarea
         ref={textareaRef}
         rows={1}
