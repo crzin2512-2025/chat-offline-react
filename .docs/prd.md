@@ -191,15 +191,15 @@ Cada tarefa deve resultar em algo funcional ou visualmente verificável antes de
 ### Fase 1 — Fundação
 
 #### Tarefa 1.1 — Tipos e estrutura de pastas
-- [ ] Criar `src/types/message.ts` com `Sender` e `Message`
-- [ ] Criar pastas `src/components/` (se ainda não existir)
+- [x] Criar `src/types/message.ts` com `Sender` e `Message`
+- [x] Criar pastas `src/components/` (se ainda não existir)
 - **Verificação:** projeto compila sem erros (`npm run build`)
 
 #### Tarefa 1.2 — Layout base da página
-- [ ] Criar `Chat.tsx` com estrutura mínima
-- [ ] Aplicar fundo marrom claro na página inteira
-- [ ] Container `max-w-2xl mx-auto` com altura `min-h-screen` (ou `h-dvh`)
-- [ ] Conectar `<Chat />` em `App.tsx`
+- [x] Criar `Chat.tsx` com estrutura mínima
+- [x] Aplicar fundo marrom claro na página inteira
+- [x] Container `max-w-2xl mx-auto` com altura `min-h-screen` (ou `h-dvh`)
+- [x] Conectar `<Chat />` em `App.tsx`
 - **Verificação:** tela com fundo marrom e container centralizado visível
 
 ---
@@ -214,7 +214,7 @@ Cada tarefa deve resultar em algo funcional ou visualmente verificável antes de
 #### Tarefa 2.2 — Lista de mensagens
 - [x] Criar `MessageList.tsx`: mapeia `messages` em `MessageBubble`
 - [x] Área com `flex-1 overflow-y-auto` ocupando espaço acima do input
-- [ ] Remover mocks; usar state real
+- [x] Remover mocks; usar state real
 - **Verificação:** lista renderiza mensagens do state em ordem cronológica
 
 #### Tarefa 2.3 — Estado vazio
@@ -278,16 +278,16 @@ Cada tarefa deve resultar em algo funcional ou visualmente verificável antes de
 ### Fase 5 — Polimento
 
 #### Tarefa 5.1 — Ajustes visuais finais
-- [ ] Espaçamento consistente entre bolhas (`gap-2` ou `space-y-2`)
-- [ ] Padding interno nas bolhas e no card de input
-- [ ] Transição suave na borda do card ao alternar toggle (opcional: `transition-colors`)
-- [ ] Revisar contraste e legibilidade no fundo marrom
+- [x] Espaçamento consistente entre bolhas (`gap-2` ou `space-y-2`)
+- [x] Padding interno nas bolhas e no card de input
+- [x] Transição suave na borda do card ao alternar toggle (opcional: `transition-colors`)
+- [x] Revisar contraste e legibilidade no fundo marrom
 - **Verificação:** UI coesa e alinhada com as especificações visuais
 
 #### Tarefa 5.2 — Revisão de qualidade
-- [ ] Rodar `npm run lint` e corrigir issues
-- [ ] Rodar `npm run build` sem erros
-- [ ] Teste manual do fluxo completo:
+- [x] Rodar `npm run lint` e corrigir issues
+- [x] Rodar `npm run build` sem erros
+- [x] Teste manual do fluxo completo:
   - Estado vazio → enviar como usuário → enviar como robô → alternar toggle → scroll automático
 - **Verificação:** build e lint limpos; fluxo manual OK
 
@@ -309,18 +309,18 @@ Cada tarefa deve resultar em algo funcional ou visualmente verificável antes de
 
 ## 12. Critérios de aceite (checklist final)
 
-- [ ] Fundo marrom claro em tela cheia
-- [ ] Chat centralizado com `max-w-2xl`
-- [ ] Mensagens de usuário à direita, robô à esquerda
-- [ ] Bolhas com fundo neutro
-- [ ] Estado vazio quando sem mensagens
-- [ ] Auto-scroll ao enviar
-- [ ] Input em card branco fixo no rodapé
-- [ ] Textarea com altura dinâmica
-- [ ] Botão enviar desabilitado sem texto
-- [ ] Enter envia, Shift+Enter quebra linha
-- [ ] Toggle ícone + texto; padrão usuário
-- [ ] Borda roxa no card quando modo robô
-- [ ] Histórico perdido ao recarregar a página
-- [ ] Tipos em `src/types/`, componentes em `src/components/`
-- [ ] Build e lint sem erros
+- [x] Fundo marrom claro em tela cheia
+- [x] Chat centralizado com `max-w-2xl`
+- [x] Mensagens de usuário à direita, robô à esquerda
+- [x] Bolhas com fundo neutro
+- [x] Estado vazio quando sem mensagens
+- [x] Auto-scroll ao enviar
+- [x] Input em card branco fixo no rodapé
+- [x] Textarea com altura dinâmica
+- [x] Botão enviar desabilitado sem texto
+- [x] Enter envia, Shift+Enter quebra linha
+- [x] Toggle ícone + texto; padrão usuário
+- [x] Borda roxa no card quando modo robô
+- [x] Histórico perdido ao recarregar a página
+- [x] Tipos em `src/types/`, componentes em `src/components/`
+- [x] Build e lint sem erros
