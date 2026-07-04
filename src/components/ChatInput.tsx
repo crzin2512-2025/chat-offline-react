@@ -50,7 +50,7 @@ function ChatInput({ sender, onToggle, onSend }: Props) {
         placeholder="Digite uma mensagem..."
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        className="flex-1 resize-none border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 max-h-[150px] overflow-y-auto"
+        className="flex-1 resize-none border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 max-h-37.5 overflow-y-auto"
       />
       <button
         type="button"
