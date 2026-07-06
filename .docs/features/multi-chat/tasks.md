@@ -6,15 +6,15 @@
 Estabelecer a base do estado global para suportar múltiplas conversas e a conversa ativa.
 
 ### Tarefas
-- [ ] Criar a pasta `src/stores`.
-- [ ] Implementar a store Zustand com:
-  - [ ] `conversations`
-  - [ ] `activeConversationId`
-  - [ ] `createConversation`
-  - [ ] `selectConversation`
-  - [ ] `addMessage`
-- [ ] Definir o tipo `Conversation` e integrar o tipo `Message` existente.
-- [ ] Garantir que a store esteja acessível pelos componentes principais.
+- [x] Criar a pasta `src/stores`.
+- [x] Implementar a store Zustand com:
+  - [x] `conversations`
+  - [x] `activeConversationId`
+  - [x] `createConversation`
+  - [x] `selectConversation`
+  - [x] `addMessage`
+- [x] Definir o tipo `Conversation` e integrar o tipo `Message` existente.
+- [x] Garantir que a store esteja acessível pelos componentes principais.
 
 ### Critério de conclusão
 A aplicação consegue inicializar com estado de conversas definido e sem conversa ativa no início.

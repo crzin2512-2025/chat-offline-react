@@ -1,4 +1,4 @@
-import { useRef, type ChangeEvent, type KeyboardEvent } from 'react'
+import { useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react'
 import type { Sender } from '../types/message'
 import SenderToggle from './SenderToggle'
 
@@ -10,6 +10,7 @@ type Props = {
 
 function ChatInput({ sender, onToggle, onSend }: Props) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const [value, setValue] = useState('')
 
   function adjustHeight() {
     const el = textareaRef.current
@@ -18,7 +19,8 @@ function ChatInput({ sender, onToggle, onSend }: Props) {
     el.style.height = `${Math.min(el.scrollHeight, 150)}px`
   }
 
-  function handleChange(_e: ChangeEvent<HTMLTextAreaElement>) {
+  function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
+    setValue(e.target.value)
     adjustHeight()
   }
 
@@ -30,16 +32,20 @@ function ChatInput({ sender, onToggle, onSend }: Props) {
   }
 
   function send() {
-    const el = textareaRef.current
-    if (!el) return
-    const text = el.value.trim()
+    const text = value.trim()
     if (!text) return
+
     onSend(text)
-    el.value = ''
-    el.style.height = 'auto'
+    setValue('')
+
+    const el = textareaRef.current
+    if (el) {
+      el.style.height = 'auto'
+    }
   }
 
   const isRobot = sender === 'robot'
+  const hasContent = value.trim().length > 0
 
   return (
     <div className={`bg-white rounded-lg shadow-sm p-3 flex items-end gap-2 border-2 transition-colors ${isRobot ? 'border-purple-500' : 'border-transparent'}`}>
@@ -47,6 +53,7 @@ function ChatInput({ sender, onToggle, onSend }: Props) {
       <textarea
         ref={textareaRef}
         rows={1}
+        value={value}
         placeholder="Digite uma mensagem..."
         onChange={handleChange}
         onKeyDown={handleKeyDown}
@@ -55,6 +62,7 @@ function ChatInput({ sender, onToggle, onSend }: Props) {
       <button
         type="button"
         onClick={send}
+        disabled={!hasContent}
         className="bg-stone-700 hover:bg-stone-800 disabled:bg-stone-300 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed"
       >
         Enviar
