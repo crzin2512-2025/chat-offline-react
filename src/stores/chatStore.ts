@@ -6,9 +6,11 @@ type ChatStore = {
   conversations: Record<string, Conversation>
   activeConversationId: string | null
   sender: Sender
+  sidebarOpen: boolean
   createConversation: () => void
   selectConversation: (id: string) => void
   toggleSender: () => void
+  toggleSidebar: () => void
   addMessage: (conversationId: string, message: Message) => void
 }
 
@@ -16,6 +18,7 @@ const useChatStore = create<ChatStore>((set) => ({
   conversations: {},
   activeConversationId: null,
   sender: 'user',
+  sidebarOpen: false,
 
   createConversation: () => {
     const id = crypto.randomUUID()
@@ -36,6 +39,10 @@ const useChatStore = create<ChatStore>((set) => ({
     set((state) => ({
       sender: state.sender === 'user' ? 'robot' : 'user',
     }))
+  },
+
+  toggleSidebar: () => {
+    set((state) => ({ sidebarOpen: !state.sidebarOpen }))
   },
 
   addMessage: (conversationId: string, message: Message) => {

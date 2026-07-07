@@ -27,13 +27,13 @@ A aplicação consegue inicializar com estado de conversas definido e sem conver
 Transformar a interface atual para suportar uma estrutura com sidebar, área principal e estado vazio.
 
 ### Tarefas
-- [ ] Criar a estrutura visual com:
-  - [ ] sidebar à esquerda;
-  - [ ] área principal de conteúdo;
-  - [ ] botão de hambúrguer para alternar a sidebar.
-- [ ] Implementar o empty state para quando não houver conversa ativa.
-- [ ] Ajustar o layout para que o conteúdo principal ocupe o restante da tela.
-- [ ] Garantir que a interface funcione em telas pequenas e grandes.
+- [x] Criar a estrutura visual com:
+  - [x] sidebar à esquerda;
+  - [x] área principal de conteúdo;
+  - [x] botão de hambúrguer para alternar a sidebar.
+- [x] Implementar o empty state para quando não houver conversa ativa.
+- [x] Ajustar o layout para que o conteúdo principal ocupe o restante da tela.
+- [x] Garantir que a interface funcione em telas pequenas e grandes.
 
 ### Critério de conclusão
 A tela exibe corretamente o estado inicial sem conversa ativa e a estrutura de navegação está presente.
