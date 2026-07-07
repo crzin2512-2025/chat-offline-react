@@ -79,11 +79,11 @@ Cada conversa mantém seu próprio histórico e a troca de conversa não mistura
 Melhorar a experiência do usuário quando não há conversa ativa e finalizar a feature.
 
 ### Tarefas
-- [ ] Desabilitar o input quando não houver conversa ativa.
-- [ ] Reduzir visualmente a opacidade do input e dos botões associados.
-- [ ] Impedir o envio de mensagens sem conversa ativa.
-- [ ] Ajustar feedback visual da conversa ativa e do empty state.
-- [ ] Revisar responsividade da sidebar e comportamento de recolhimento.
+- [x] Desabilitar o input quando não houver conversa ativa.
+- [x] Reduzir visualmente a opacidade do input e dos botões associados.
+- [x] Impedir o envio de mensagens sem conversa ativa.
+- [x] Ajustar feedback visual da conversa ativa e do empty state.
+- [x] Revisar responsividade da sidebar e comportamento de recolhimento.
 
 ### Critério de conclusão
 A experiência final atende aos requisitos do PRD e o fluxo de múltiplas conversas funciona corretamente.

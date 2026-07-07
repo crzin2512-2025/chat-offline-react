@@ -6,9 +6,10 @@ type Props = {
   sender: Sender
   onToggle: () => void
   onSend: (text: string) => void
+  disabled?: boolean
 }
 
-function ChatInput({ sender, onToggle, onSend }: Props) {
+function ChatInput({ sender, onToggle, onSend, disabled = false }: Props) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const [value, setValue] = useState('')
 
@@ -48,21 +49,22 @@ function ChatInput({ sender, onToggle, onSend }: Props) {
   const hasContent = value.trim().length > 0
 
   return (
-    <div className={`bg-white rounded-lg shadow-sm p-3 flex items-end gap-2 border-2 transition-colors ${isRobot ? 'border-purple-500' : 'border-transparent'}`}>
-      <SenderToggle sender={sender} onToggle={onToggle} />
+    <div className={`bg-white rounded-lg shadow-sm p-3 flex items-end gap-2 border-2 transition-colors ${isRobot ? 'border-purple-500' : 'border-transparent'} ${disabled ? 'opacity-40' : ''}`}>
+      <SenderToggle sender={sender} onToggle={onToggle} disabled={disabled} />
       <textarea
         ref={textareaRef}
         rows={1}
         value={value}
-        placeholder="Digite uma mensagem..."
+        placeholder={disabled ? 'Selecione ou crie uma conversa...' : 'Digite uma mensagem...'}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        className="flex-1 resize-none border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 max-h-37.5 overflow-y-auto"
+        disabled={disabled}
+        className="flex-1 resize-none border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 max-h-37.5 overflow-y-auto disabled:cursor-not-allowed disabled:bg-gray-50"
       />
       <button
         type="button"
         onClick={send}
-        disabled={!hasContent}
+        disabled={disabled || !hasContent}
         className="bg-stone-700 hover:bg-stone-800 disabled:bg-stone-300 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed"
       >
         Enviar
