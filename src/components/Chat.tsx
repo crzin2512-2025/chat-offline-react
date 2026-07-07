@@ -55,7 +55,7 @@ function Chat() {
         {/* Content area */}
         {activeConversationId ? (
           <>
-            <MessageList messages={activeMessages} />
+            <MessageList key={activeConversationId} messages={activeMessages} />
             <div className="p-4">
               <ChatInput sender={sender} onToggle={toggleSender} onSend={handleSend} />
             </div>

@@ -63,10 +63,10 @@ O usuário consegue visualizar todas as conversas, criar novas e alternar entre 
 Separar o histórico por conversa e manter o comportamento do chat atual.
 
 ### Tarefas
-- [ ] Ajustar o fluxo de envio para adicionar mensagens à conversa ativa.
-- [ ] Garantir que cada conversa tenha seu próprio histórico.
-- [ ] Atualizar a renderização da lista de mensagens para refletir a conversa selecionada.
-- [ ] Verificar que ao trocar de conversa o histórico correto é exibido.
+- [x] Ajustar o fluxo de envio para adicionar mensagens à conversa ativa.
+- [x] Garantir que cada conversa tenha seu próprio histórico.
+- [x] Atualizar a renderização da lista de mensagens para refletir a conversa selecionada.
+- [x] Verificar que ao trocar de conversa o histórico correto é exibido.
 
 ### Critério de conclusão
 Cada conversa mantém seu próprio histórico e a troca de conversa não mistura mensagens.
