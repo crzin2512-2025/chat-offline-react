@@ -46,11 +46,11 @@ A tela exibe corretamente o estado inicial sem conversa ativa e a estrutura de n
 Permitir que o usuário veja e navegue entre várias conversas.
 
 ### Tarefas
-- [ ] Implementar a sidebar com a lista de conversas.
-- [ ] Exibir o ID de cada conversa como identificação.
-- [ ] Adicionar botão para criar uma nova conversa.
-- [ ] Destacar visualmente a conversa atualmente ativa.
-- [ ] Implementar a seleção de uma conversa existente.
+- [x] Implementar a sidebar com a lista de conversas.
+- [x] Exibir o ID de cada conversa como identificação.
+- [x] Adicionar botão para criar uma nova conversa.
+- [x] Destacar visualmente a conversa atualmente ativa.
+- [x] Implementar a seleção de uma conversa existente.
 
 ### Critério de conclusão
 O usuário consegue visualizar todas as conversas, criar novas e alternar entre elas pela sidebar.

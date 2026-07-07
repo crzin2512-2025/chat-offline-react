@@ -9,6 +9,7 @@ type ChatStore = {
   sidebarOpen: boolean
   createConversation: () => void
   selectConversation: (id: string) => void
+  deleteConversation: (id: string) => void
   toggleSender: () => void
   toggleSidebar: () => void
   addMessage: (conversationId: string, message: Message) => void
@@ -33,6 +34,17 @@ const useChatStore = create<ChatStore>((set) => ({
 
   selectConversation: (id: string) => {
     set({ activeConversationId: id })
+  },
+
+  deleteConversation: (id: string) => {
+    set((state) => {
+      const { [id]: _, ...rest } = state.conversations
+      const isActive = state.activeConversationId === id
+      return {
+        conversations: rest,
+        activeConversationId: isActive ? null : state.activeConversationId,
+      }
+    })
   },
 
   toggleSender: () => {
