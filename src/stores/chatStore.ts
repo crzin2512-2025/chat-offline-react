@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 import type { Message, Sender } from '../types/message'
 import type { Conversation } from '../types/conversation'
 
@@ -15,7 +16,9 @@ type ChatStore = {
   addMessage: (conversationId: string, message: Message) => void
 }
 
-const useChatStore = create<ChatStore>((set) => ({
+const useChatStore = create<ChatStore>()(
+  persist(
+    (set) => ({
   conversations: {},
   activeConversationId: null,
   sender: 'user',
@@ -72,6 +75,16 @@ const useChatStore = create<ChatStore>((set) => ({
       }
     })
   },
-}))
+    }),
+    {
+      name: 'chat-offline-storage',
+      partialize: (state) => ({
+        conversations: state.conversations,
+        activeConversationId: state.activeConversationId,
+        sender: state.sender,
+      }),
+    },
+  ),
+)
 
 export { useChatStore }

@@ -10,8 +10,8 @@ function MessageBubble({ message }: Props) {
 
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
-      <div className={`max-w-[70%] rounded-lg  ${isRobot ? 'bg-purple-200' : 'bg-white'} px-4 py-2 shadow-sm`}>
-        <p className="text-sm text-gray-800 whitespace-pre-wrap">{message.text}</p>
+      <div className={`max-w-[70%] rounded-xl px-4 py-2 ${isRobot ? 'bg-stone-700 text-stone-100' : 'bg-white text-stone-800'}`}>
+        <p className="text-sm whitespace-pre-wrap">{message.text}</p>
       </div>
     </div>
   )

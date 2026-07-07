@@ -96,14 +96,14 @@ A experiência final atende aos requisitos do PRD e o fluxo de múltiplas conver
 Validar a implementação antes de considerar a feature concluída.
 
 ### Tarefas
-- [ ] Testar os cenários principais do PRD:
-  - [ ] inicialização sem conversa ativa;
-  - [ ] criação de conversa;
-  - [ ] alternância entre conversas;
-  - [ ] envio de mensagem;
-  - [ ] sidebar retrátil.
-- [ ] Revisar se não há regressões no fluxo atual do chat.
-- [ ] Ajustar detalhes visuais e de usabilidade.
+- [x] Testar os cenários principais do PRD:
+  - [x] inicialização sem conversa ativa;
+  - [x] criação de conversa;
+  - [x] alternância entre conversas;
+  - [x] envio de mensagem;
+  - [x] sidebar retrátil.
+- [x] Revisar se não há regressões no fluxo atual do chat.
+- [x] Ajustar detalhes visuais e de usabilidade.
 
 ### Critério de conclusão
 A feature está pronta para revisão e pode ser entregue com os cenários do PRD validados.

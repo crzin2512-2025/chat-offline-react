@@ -1,44 +1,60 @@
 # Chat Offline React
 
-Aplicação de chat em React + TypeScript construída com Vite, com interface simples e responsiva para enviar mensagens em uma conversa local.
+Aplicação de chat multi-conversas em React + TypeScript construída com Vite, com sidebar retrátil e interface responsiva para gerenciar múltiplas conversas independentes.
 
 ## Sobre o projeto
 
-Este projeto simula um chat em que o usuário pode:
+Este projeto simula um chat com suporte a múltiplas conversas, onde o usuário pode:
 
-- escolher se a mensagem será enviada como usuário ou como robô;
+- criar, selecionar e excluir conversas independentes;
+- enviar mensagens como usuário ou como robô;
 - digitar mensagens em uma área de texto com ajuste automático de altura;
-- visualizar as mensagens em uma lista com estilo de bolha;
+- visualizar o histórico de mensagens separado por conversa;
+- usar uma sidebar retrátil para navegar entre conversas;
 - interagir totalmente no frontend, sem backend ou persistência externa.
-
-É uma aplicação ideal para praticar estados, componentes e UI com React.
 
 ## Funcionalidades
 
+- Múltiplas conversas independentes com histórico separado
+- Sidebar retrátil com overlay (mobile e desktop)
+- Criação e exclusão de conversas
 - Alternância entre remetente “Usuário” e “Robô”
 - Envio de mensagens com botão ou tecla Enter
-- Layout centralizado e responsivo
+- Input desabilitado quando não há conversa ativa
+- Layout responsivo (320px+)
 - Estilização com Tailwind CSS
 - Rolagem automática para a última mensagem
-- Interface sem dependência de servidor
 
 ## Tecnologias
 
 - React 19
 - TypeScript
+- Zustand (estado global)
 - Vite
 - Tailwind CSS
 - Oxlint
 
 ## Estrutura do projeto
 
-- src/App.tsx: ponto de entrada da aplicação
-- src/components/Chat.tsx: controla o estado da conversa e o remetente
-- src/components/ChatInput.tsx: campo de entrada e envio de mensagens
-- src/components/MessageList.tsx: lista de mensagens
-- src/components/MessageBubble.tsx: exibição visual das mensagens
-- src/components/SenderToggle.tsx: alternador de remetente
-- src/types/message.ts: tipos compartilhados de mensagem
+```
+src/
+├── App.tsx                   # Ponto de entrada da aplicação
+├── main.tsx                  # Renderização do React
+├── index.css                 # Estilos globais
+├── stores/
+│   └── chatStore.ts          # Store Zustand (conversas, sender, sidebar)
+├── types/
+│   ├── message.ts            # Tipos Sender e Message
+│   └── conversation.ts       # Tipo Conversation
+└── components/
+    ├── Chat.tsx              # Layout principal (sidebar + conteúdo)
+    ├── Sidebar.tsx           # Sidebar com lista de conversas
+    ├── EmptyState.tsx        # Estado vazio sem conversa ativa
+    ├── ChatInput.tsx         # Campo de entrada e envio de mensagens
+    ├── MessageList.tsx       # Lista de mensagens
+    ├── MessageBubble.tsx     # Exibição visual das mensagens
+    └── SenderToggle.tsx      # Alternador de remetente
+```
 
 ## Como executar
 
@@ -59,12 +75,12 @@ npm run dev
 ## Scripts disponíveis
 
 ```bash
-npm run dev
-npm run build
-npm run lint
-npm run preview
+npm run dev      # Servidor de desenvolvimento
+npm run build    # Build de produção
+npm run lint     # Verificação de código
+npm run preview  # Preview da build de produção
 ```
 
 ## Observação
 
-As mensagens ficam apenas na sessão atual do navegador. Não há armazenamento persistido nem integração com backend.
+As mensagens e conversas ficam apenas na sessão atual do navegador. Não há armazenamento persistido nem integração com backend.

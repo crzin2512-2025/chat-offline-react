@@ -1,13 +1,12 @@
 function EmptyState() {
   return (
     <div className="flex-1 flex items-center justify-center p-6">
-      <div className="text-center space-y-3">
-        <div className="text-4xl">💬</div>
-        <h2 className="text-lg font-medium text-stone-600">
+      <div className="text-center space-y-2">
+        <h2 className="text-sm font-medium text-stone-400">
           Nenhuma conversa selecionada
         </h2>
-        <p className="text-sm text-stone-400 max-w-xs mx-auto">
-          Crie uma nova conversa ou selecione uma existente na sidebar para começar.
+        <p className="text-xs text-stone-300">
+          Crie ou selecione uma conversa na sidebar
         </p>
       </div>
     </div>
